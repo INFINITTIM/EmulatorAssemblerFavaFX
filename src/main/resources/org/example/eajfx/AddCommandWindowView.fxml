@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="223.0" prefWidth="269.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.eajfx.AddCommandWindowController">
+   <children>
+      <TextField fx:id="task" layoutX="90.0" layoutY="14.0" prefHeight="40.0" prefWidth="150.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="arg1" layoutX="91.0" layoutY="63.0" prefHeight="40.0" prefWidth="150.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="arg2" layoutX="92.0" layoutY="114.0" prefHeight="40.0" prefWidth="150.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Label layoutX="27.0" layoutY="18.0" prefHeight="34.0" prefWidth="63.0" text="Task">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="69.0" text="Arg1">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="120.0" text="Arg2">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="35.0" layoutY="166.0" mnemonicParsing="false" onAction="#add_new_command" text="Добавить команду">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

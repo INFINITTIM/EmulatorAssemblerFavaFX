@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="Command" layoutX="183.0" layoutY="18.0" prefHeight="34.0" prefWidth="70.0" text="COM">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="Argument1" layoutX="253.0" layoutY="18.0" prefHeight="34.0" prefWidth="70.0" text="ARG1">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="Argument2" layoutX="323.0" layoutY="18.0" prefHeight="34.0" prefWidth="70.0" text="ARG2">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#delete_command" prefHeight="44.0" prefWidth="44.0" text="Х">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="66.0" layoutY="13.0" mnemonicParsing="false" onAction="#up_command" prefHeight="44.0" prefWidth="44.0" text="&lt;">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="118.0" layoutY="13.0" mnemonicParsing="false" onAction="#down_command" prefHeight="44.0" prefWidth="44.0" text="&gt;">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
