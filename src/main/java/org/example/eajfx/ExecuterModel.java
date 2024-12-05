@@ -38,12 +38,12 @@ public class ExecuterModel
 
     public void run_one_iteration_program(ProgramModel prog)
     {
-        if(index_command_exec_now != prog.program_commands.size())
+        if(index_command_exec_now != prog.dao.program_commands.size())
             index_command_exec_now++;
         for (Command command : prog)
         {
             try {
-                if(prog.program_commands.indexOf(command) == index_command_exec_now)
+                if(prog.dao.program_commands.indexOf(command) == index_command_exec_now)
                     cpu.exec(command);
             } catch (Exception_div_zero e) {
                 System.err.println("Ошибка: " + e.getMessage());

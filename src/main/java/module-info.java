@@ -10,6 +10,8 @@ module org.example.eajfx {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires org.xerial.sqlitejdbc;
+    requires java.sql;
 
     opens org.example.eajfx to javafx.fxml;
     exports org.example.eajfx;

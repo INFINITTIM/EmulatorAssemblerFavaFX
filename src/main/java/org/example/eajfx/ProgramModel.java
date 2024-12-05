@@ -5,7 +5,8 @@ import java.util.stream.Collectors;
 
 public class ProgramModel implements Iterable<Command>
 {
-    List<Command> program_commands = new ArrayList<>();
+    DAO_Memory dao = DAOBuilder.getDAO();
+    //List<Command> program_commands = new ArrayList<>();
     int max_command_index = 0;
     ArrayList<IObserver> allObserver = new ArrayList<>();
 
@@ -20,48 +21,42 @@ public class ProgramModel implements Iterable<Command>
 
     public void add_command(Command c)
     {
-        program_commands.add(c);
+        dao.add_command(c);
         max_command_index++;
         eventCall();
     }
 
     public void delete_command(Command c)
     {
-        program_commands.remove(c);
+        dao.delete_command(c);
         max_command_index--;
         eventCall();
     }
 
     public int get_command_index(Command c)
     {
-        return (program_commands.indexOf(c));
+        return (dao.program_commands.indexOf(c));
     }
 
     public void swap_up_command(Command c) {
-        int index = program_commands.indexOf(c);
-        if (index > 0) { // Проверяем, что команда не первая
-            Collections.swap(program_commands, index, index - 1);
-        }
+        dao.swap_up_command(c);
         eventCall();
     }
 
     public void swap_down_command(Command c) {
-        int index = program_commands.indexOf(c);
-        if (index >= 0 && index < program_commands.size() - 1) { // Проверяем, что команда не последняя
-            Collections.swap(program_commands, index, index + 1);
-        }
+        dao.swap_down_command(c);
         eventCall();
     }
 
     @Override
     public Iterator<Command> iterator() {
-        return program_commands.iterator();
+        return dao.program_commands.iterator();
     }
 
     private Map<String, Long> MapWithPopulationTasks()
     {
         //мап инскрукция и кол-во вхождений данной инструкции
-        Map<String, Long> map_with_population_tasks = program_commands
+        Map<String, Long> map_with_population_tasks = dao.program_commands
                 .stream()
                 .collect(Collectors.groupingBy(Command::getTask, Collectors.counting()));
         return map_with_population_tasks;
@@ -101,7 +96,7 @@ public class ProgramModel implements Iterable<Command>
 
     public String ListDiap() {
         List<Integer> list_diap = new ArrayList<>();
-        list_diap = program_commands
+        list_diap = dao.program_commands
                 .stream()
                 .filter(command -> (command.getTask()=="init")
                         ||  (command.getTask()=="ld")
